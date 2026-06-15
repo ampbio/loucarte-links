@@ -3,12 +3,75 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Loucarte Tattoo & Piercing</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <meta name="referrer" content="no-referrer-when-downgrade"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; frame-src https://www.google.com; script-src 'self' 'unsafe-inline'; connect-src 'none';"/>
+
+  <!-- SEO básico -->
+  <title>Loucarte Tattoo & Piercing · Imbituba, SC</title>
+  <meta name="description" content="Estúdio de tatuagem e piercing em Imbituba, SC. Blackwork, coberturas e realismo com Carlos. Piercing premium em titânio com Camila. Agende pelo WhatsApp."/>
+  <meta name="keywords" content="tatuagem imbituba, tattoo imbituba, piercing imbituba, tatuagem santa catarina, loucarte tattoo, blackwork, realismo, piercing titânio"/>
+  <meta name="author" content="Loucarte Tattoo & Piercing"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://ampbio.github.io/loucarte-links/"/>
+
+  <!-- Open Graph (WhatsApp, Facebook, etc.) -->
+  <meta property="og:type" content="business.business"/>
+  <meta property="og:title" content="Loucarte Tattoo & Piercing · Imbituba, SC"/>
+  <meta property="og:description" content="Tatuagem e piercing premium em Imbituba. Blackwork, coberturas, realismo e piercing em titânio. Agende pelo WhatsApp."/>
+  <meta property="og:image" content="https://ampbio.github.io/loucarte-links/imagens/thumb.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:url" content="https://ampbio.github.io/loucarte-links/"/>
+  <meta property="og:locale" content="pt_BR"/>
+  <meta property="og:site_name" content="Loucarte Tattoo & Piercing"/>
+  <meta property="business:contact_data:locality" content="Imbituba"/>
+  <meta property="business:contact_data:region" content="SC"/>
+  <meta property="business:contact_data:country_name" content="Brasil"/>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Loucarte Tattoo & Piercing · Imbituba, SC"/>
+  <meta name="twitter:description" content="Tatuagem e piercing premium em Imbituba. Blackwork, coberturas, realismo e piercing em titânio."/>
+  <meta name="twitter:image" content="https://ampbio.github.io/loucarte-links/imagens/thumb.png"/>
+
+  <!-- Cor do browser mobile -->
+  <meta name="theme-color" content="#000000"/>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TattooParlor",
+    "name": "Loucarte Tattoo & Piercing",
+    "image": "https://ampbio.github.io/loucarte-links/imagens/thumb.png",
+    "url": "https://ampbio.github.io/loucarte-links/",
+    "telephone": "+5548991772318",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Imbituba",
+      "addressRegion": "SC",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -28.2384957,
+      "longitude": -48.6689728
+    },
+    "sameAs": [
+      "https://www.instagram.com/loucartetattoo/",
+      "https://www.facebook.com/Loucartetattoo"
+    ],
+    "priceRange": "$$",
+    "description": "Estúdio de tatuagem e piercing em Imbituba, SC. Blackwork, coberturas e realismo com Carlos. Piercing premium em titânio com Camila."
+  }
+  </script>
+
+  <link rel="icon" type="image/png" href="imagens/fav.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" crossorigin="anonymous"/>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     body{
-      background:#111;
+      background:#000;
       display:flex;
       justify-content:center;
       align-items:flex-start;
@@ -19,11 +82,56 @@
       width:100%;
       max-width:420px;
       min-height:100vh;
-      background:#0d0d0d;
+      background:#000;
       display:flex;
       flex-direction:column;
       align-items:center;
       padding:0 0 2.5rem;
+      position:relative;
+      overflow:hidden;
+    }
+    /* VIDEO HERO */
+    .video-hero{
+      width:100%;
+      line-height:0;
+      position:relative;
+    }
+    .video-hero video{
+      width:100%;
+      display:block;
+      object-fit:cover;
+    }
+    .card-fade-left{
+      position:fixed;
+      top:0; bottom:0; left:50%;
+      margin-left:-210px;
+      width:40px;
+      background:linear-gradient(to right, #000 0%, transparent 100%);
+      pointer-events:none;
+      z-index:99;
+    }
+    .card-fade-right{
+      position:fixed;
+      top:0; bottom:0; left:50%;
+      margin-left:170px;
+      width:40px;
+      background:linear-gradient(to left, #000 0%, transparent 100%);
+      pointer-events:none;
+      z-index:99;
+    }
+    /* Fix #2: hide side fades on screens narrower than the card — they misalign and cover content */
+    @media (max-width:420px){
+      .card-fade-left,.card-fade-right{display:none;}
+    }
+    .video-fade{
+      position:absolute;
+      bottom:-2px;
+      left:0;
+      right:0;
+      height:180px;
+      background:linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.6) 50%, #000 100%);
+      pointer-events:none;
+      z-index:2;
     }
     /* HEADER */
     .header{
@@ -31,8 +139,11 @@
       display:flex;
       flex-direction:column;
       align-items:center;
-      padding:2.5rem 1.5rem 1.8rem;
+      padding:1.8rem 1.5rem 1.4rem;
       border-bottom:1px solid rgba(255,255,255,0.08);
+      margin-top:-80px;
+      position:relative;
+      z-index:3;
     }
     .logo-wrap{
       width:96px;
@@ -40,24 +151,27 @@
       border-radius:50%;
       border:1.5px solid rgba(255,255,255,0.2);
       overflow:hidden;
-      margin-bottom:1rem;
+      margin-bottom:.6rem;
       background:#000;
     }
     .logo-wrap img{width:100%;height:100%;object-fit:cover;}
-    .brand{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:1.9rem;
-      letter-spacing:.1em;
-      color:#f2f2f2;
-      text-align:center;
-      line-height:1;
+    .sr-only{
+      position:absolute;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      white-space:nowrap;
+      border:0;
     }
     .tagline{
       font-size:.68rem;
       letter-spacing:.22em;
       text-transform:uppercase;
       color:rgba(255,255,255,.38);
-      margin-top:.35rem;
+      margin-top:0;
       text-align:center;
     }
     /* LINKS */
@@ -84,73 +198,108 @@
       letter-spacing:.08em;
       text-decoration:none;
       transition:background .18s,border-color .18s;
-      text-align:left;
+      text-align:center;
     }
+    .link-btn span{
+      flex:1;
+      text-align:center;
+    }
+    .link-btn .btn-icon{
+      width:17px;
+      height:17px;
+      stroke:rgba(255,255,255,.55);
+      fill:none;
+      flex-shrink:0;
+      transition:stroke .18s;
+    }
+    .link-btn:hover .btn-icon{stroke:rgba(255,255,255,.9);}
     .link-btn:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.22);}
-    .link-btn svg{width:16px;height:16px;stroke:rgba(255,255,255,.35);flex-shrink:0;transition:transform .18s,stroke .18s;}
-    .link-btn:hover svg{stroke:rgba(255,255,255,.7);transform:translateX(3px);}
-    /* PANEL */
-    .panel{
+    .link-btn svg:last-child{width:16px;height:16px;stroke:rgba(255,255,255,.35);flex-shrink:0;transition:transform .18s,stroke .18s;}
+    .link-btn:hover svg:last-child{stroke:rgba(255,255,255,.7);transform:translateX(3px);}
+    /* MODAL */
+    .modal-overlay{
       display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.75);
+      backdrop-filter:blur(4px);
+      z-index:100;
+      justify-content:center;
+      align-items:flex-end;
+    }
+    .modal-overlay.open{display:flex;}
+    .modal-box{
       width:100%;
-      margin:0;
-      padding:.1rem 1.4rem 0;
-    }
-    .panel.open{display:block;}
-    .panel-inner{
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.08);
-      border-top:none;
-      border-radius:0 0 6px 6px;
-      padding:1rem 1.1rem 1.1rem;
-      margin-top:-1px;
-    }
-    .panel-inner p{
-      font-size:.82rem;
-      color:rgba(255,255,255,.6);
-      line-height:1.7;
-      margin-bottom:.7rem;
-    }
-    .panel-inner p:last-child{margin-bottom:0;}
-    .panel-inner ul{
-      list-style:none;
-      display:flex;
-      flex-direction:column;
-      gap:.4rem;
-      margin-bottom:.8rem;
-    }
-    .panel-inner ul li{
-      font-size:.8rem;
-      color:rgba(255,255,255,.5);
-      padding-left:1rem;
+      max-width:420px;
+      background:#161616;
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:14px 14px 0 0;
+      padding:1.5rem 1.4rem 2rem;
+      max-height:90vh;
+      overflow-y:auto;
       position:relative;
     }
-    .panel-inner ul li::before{content:'—';position:absolute;left:0;color:rgba(255,255,255,.25);}
-    .panel-cta{
-      display:inline-block;
-      margin-top:.6rem;
-      padding:.5rem 1.1rem;
-      border:1px solid rgba(255,255,255,.25);
+    @keyframes slideUp{from{transform:translateY(50px);opacity:0}to{transform:translateY(0);opacity:1}}
+    
+    .modal-close{
+      background:none;
+      border:none;
+      cursor:pointer;
+      padding:.65rem;
+      min-width:44px;
+      min-height:44px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:rgba(255,255,255,.35);
+      transition:color .18s;
+      line-height:0;
+      position:absolute;
+      top:1rem;
+      right:1rem;
+    }
+    .modal-close:hover{color:rgba(255,255,255,.8);}
+    .modal-close svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;}
+    .modal-body p{
+      font-size:.83rem;
+      color:rgba(255,255,255,.6);
+      line-height:1.7;
+      margin-bottom:.8rem;
+      text-align:center;
+    }
+    
+    .modal-cta{
+      display:block;
+      text-align:center;
+      margin-top:.8rem;
+      padding:.7rem 1.1rem;
+      border:1px solid rgba(74,222,128,.25);
+      background:rgba(74,222,128,.06);
       color:rgba(255,255,255,.8);
       font-size:.72rem;
       letter-spacing:.18em;
       text-transform:uppercase;
       text-decoration:none;
       transition:background .18s,border-color .18s;
-      border-radius:3px;
+      border-radius:4px;
     }
-    .panel-cta:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.45);}
+    .modal-cta:hover{background:rgba(74,222,128,.12);border-color:rgba(74,222,128,.45);}
     .care-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:.5rem;
-      margin-top:.5rem;
+      margin-top:.2rem;
+    }
+    /* quando o grid tem número ímpar de items, o último ocupa as 2 colunas */
+    .care-grid > :last-child:nth-child(odd){
+      grid-column: 1 / -1;
     }
     .care-card{
       border:1px solid rgba(255,255,255,.07);
       border-radius:4px;
       padding:.65rem .7rem;
       background:rgba(255,255,255,.02);
+      text-align:center;
     }
     .care-card strong{
       display:block;
@@ -160,7 +309,7 @@
       color:rgba(255,255,255,.7);
       margin-bottom:.3rem;
     }
-    .care-card p{font-size:.75rem;margin:0;}
+    .care-card p{font-size:.75rem;margin:0;color:rgba(255,255,255,.5);line-height:1.5;}
     /* SOCIAL */
     .social{
       width:100%;
@@ -188,18 +337,11 @@
       transition:background .18s,color .18s;
     }
     .social-btn:hover{background:rgba(255,255,255,.09);color:rgba(255,255,255,.85);}
-    .social-btn svg{width:20px;height:20px;fill:currentColor;}
+    .social-btn svg{width:20px;height:20px;fill:currentColor;stroke:none;}
     /* MAP */
     .map-section{
       width:100%;
       padding:1.4rem 1.4rem 0;
-    }
-    .map-label{
-      font-size:.65rem;
-      letter-spacing:.2em;
-      text-transform:uppercase;
-      color:rgba(255,255,255,.3);
-      margin-bottom:.6rem;
     }
     .map-wrap{
       border-radius:6px;
@@ -217,129 +359,294 @@
       text-transform:uppercase;
       text-align:center;
     }
+    .credit{
+      font-size:.6rem;
+      letter-spacing:.12em;
+      color:rgba(255,255,255,.25);
+      text-align:center;
+      padding-bottom:1.2rem;
+    }
+    /* FADE IN — página */
+    @keyframes fadeInUp{
+      from{opacity:0;transform:translateY(18px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+    @keyframes fadeIn{
+      from{opacity:0}
+      to{opacity:1}
+    }
+    .video-hero{
+      animation:fadeIn .8s ease both;
+    }
+    .header{
+      animation:fadeInUp .6s ease .25s both;
+    }
+    .social{
+      animation:fadeInUp .6s ease .4s both;
+    }
+    .links{
+      animation:fadeInUp .6s ease .55s both;
+    }
+    .map-section{
+      animation:fadeInUp .6s ease .7s both;
+    }
+    .footer{
+      animation:fadeInUp .6s ease .85s both;
+    }
+    .credit{
+      animation:fadeInUp .6s ease 1s both;
+    }
+    /* FADE IN — modal overlay */
+    @keyframes fadeInOverlay{
+      from{opacity:0}
+      to{opacity:1}
+    }
+    .modal-overlay.open{
+      animation:fadeInOverlay .22s ease both;
+    }
+    .modal-overlay.open .modal-box{
+      animation:slideUp .25s ease both;
+    }
+    /* Respect user's reduced-motion preference */
+    @media (prefers-reduced-motion: reduce){
+      .video-hero,.header,.social,.links,.map-section,.footer,.credit{animation:none;}
+      .modal-overlay.open{animation:none;}
+      .modal-overlay.open .modal-box{animation:none;}
+    }
   </style>
 </head>
 <body>
 <div class="card">
+  <!-- Shared SVG defs — gradient used by Instagram icons in both modals -->
+  <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <linearGradient id="insta-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#f09433"/>
+        <stop offset="25%" stop-color="#e6683c"/>
+        <stop offset="50%" stop-color="#dc2743"/>
+        <stop offset="75%" stop-color="#cc2366"/>
+        <stop offset="100%" stop-color="#bc1888"/>
+      </linearGradient>
+    </defs>
+  </svg>
+  <div class="card-fade-left"></div>
+  <div class="card-fade-right"></div>
+
+  <!-- VIDEO HERO -->
+  <div class="video-hero">
+    <video src="imagens/head.mp4" autoplay loop muted playsinline poster="imagens/logo.png"></video>
+    <div class="video-fade"></div>
+  </div>
 
   <!-- HEADER -->
   <div class="header">
     <div class="logo-wrap">
-      <img src="data:image/jpeg;base64,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" alt="Loucarte Tattoo"/>
+      <img src="imagens/logo.png" alt="Loucarte Tattoo"/>
     </div>
-    <div class="brand">Loucarte Tattoo</div>
+    <!-- h1 visually hidden — acessível para screen readers e SEO, invisível na página -->
+    <h1 class="sr-only">Loucarte Tattoo &amp; Piercing</h1>
     <div class="tagline">Tattoo &amp; Piercing · Imbituba, SC</div>
-  </div>
-
-  <!-- LINKS -->
-  <div class="links">
-
-    <!-- TATTOO -->
-    <button class="link-btn" onclick="toggle('tattoo')">
-      🖋 Tattoo aqui
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-    <div class="panel" id="panel-tattoo">
-      <div class="panel-inner">
-        <p>Tatuagens personalizadas para o seu estilo — do traço fino ao blackwork, do realismo à aquarela. Cada peça é criada em parceria com você.</p>
-        <ul>
-          <li>Atendimento por agendamento</li>
-          <li>Arte personalizada ou adaptada</li>
-          <li>Fine line, geométrico, realismo, tribal e mais</li>
-          <li>Materiais descartáveis e esterilizados</li>
-        </ul>
-        <a class="panel-cta" href="https://www.instagram.com/loucartetattoo/" target="_blank">Agendar pelo Instagram</a>
-      </div>
-    </div>
-
-    <!-- PIERCING -->
-    <button class="link-btn" onclick="toggle('piercing')">
-      💎 Piercing aqui
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-    <div class="panel" id="panel-piercing">
-      <div class="panel-inner">
-        <p>Perfurações com segurança e higiene total, usando joias de qualidade e técnica precisa para cada região do corpo.</p>
-        <ul>
-          <li>Orelha: lóbulo, hélix, tragus, daith e mais</li>
-          <li>Nariz, septo, língua, sobrancelha, umbigo</li>
-          <li>Joias em aço cirúrgico, titânio e ouro</li>
-          <li>Orientações pós-procedimento incluídas</li>
-        </ul>
-        <a class="panel-cta" href="https://www.instagram.com/loucartetattoo/" target="_blank">Agendar pelo Instagram</a>
-      </div>
-    </div>
-
-    <!-- CUIDADOS -->
-    <button class="link-btn" onclick="toggle('cuidados')">
-      🩹 Cuidados com a tattoo
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-    <div class="panel" id="panel-cuidados">
-      <div class="panel-inner">
-        <p>Os primeiros dias são os mais importantes. Siga essas dicas para garantir que sua arte cure bem.</p>
-        <div class="care-grid">
-          <div class="care-card"><strong>Primeiras horas</strong><p>Mantenha o curativo pelo tempo indicado. Não molhe nem esfregue.</p></div>
-          <div class="care-card"><strong>Limpeza</strong><p>Lave com sabão neutro e água fria. Pat seco com papel toalha.</p></div>
-          <div class="care-card"><strong>Hidratação</strong><p>Creme neutro 2–3x ao dia em fina camada.</p></div>
-          <div class="care-card"><strong>Evite</strong><p>Sol, piscina, mar e sauna por 30 dias. Não arranque a película.</p></div>
-          <div class="care-card"><strong>Proteção solar</strong><p>FPS 50+ sempre que exposta ao sol após curar.</p></div>
-          <div class="care-card"><strong>Dúvidas?</strong><p>Fale com a gente pelo Instagram.</p></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- LOCALIZAÇÃO -->
-    <button class="link-btn" onclick="toggle('local')">
-      📍 Nossa localização
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-    <div class="panel" id="panel-local">
-      <div class="panel-inner">
-        <p>Estamos em Imbituba, Santa Catarina. Passe pra nos visitar ou agende antes pelo Instagram.</p>
-        <a class="panel-cta" href="https://www.google.com/maps/place/LOUCARTE+Tattoo+%26+Piercing/@-28.2386035,-48.6688838,17z" target="_blank">Abrir no Google Maps</a>
-      </div>
-    </div>
-
   </div>
 
   <!-- SOCIAL -->
   <div class="social">
     <div class="social-row">
-      <a class="social-btn" href="https://www.instagram.com/loucartetattoo/" target="_blank">
+      <a class="social-btn" href="https://www.instagram.com/loucartetattoo/" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         Instagram
       </a>
-      <a class="social-btn" href="https://www.facebook.com/Loucartetattoo" target="_blank">
+      <a class="social-btn" href="https://www.facebook.com/Loucartetattoo" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         Facebook
       </a>
-      <a class="social-btn" href="https://www.google.com/maps/place/LOUCARTE+Tattoo+%26+Piercing/@-28.2386035,-48.6688838,17z" target="_blank">
+      <a class="social-btn" href="https://maps.app.goo.gl/w8CNaaMYddTKBZqN7" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24"><path d="M12 0C7.802 0 4 3.403 4 7.602 4 11.8 7.469 16.812 12 24c4.531-7.188 8-12.2 8-16.398C20 3.403 16.199 0 12 0zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
         Maps
       </a>
     </div>
   </div>
 
-  <!-- MAP -->
-  <div class="map-section">
-    <div class="map-label">📌 Imbituba · Santa Catarina</div>
-    <div class="map-wrap">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3514.9695627523142!2d-48.668883799999996!3d-28.238603500000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x952749c960f56629%3A0x83f309d59801e568!2sLOUCARTE%20Tattoo%20%26%20Piercing!5e0!3m2!1spt-BR!2sbr!4v1781398535468!5m2!1spt-BR!2sbr" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <!-- LINKS -->
+  <div class="links">
+
+    <button class="link-btn" onclick="openModal('tattoo')">
+      <svg class="btn-icon" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+      <span>Tattoo aqui</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <!-- CUIDADOS TATTOO -->
+    <button class="link-btn" onclick="openModal('cuidados')">
+      <svg class="btn-icon" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>
+      <span>Cuidados com a tattoo</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <!-- PIERCING -->
+    <button class="link-btn" onclick="openModal('piercing')">
+      <svg class="btn-icon" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a4 4 0 0 1 4 4"/></svg>
+      <span>Piercing aqui</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <!-- CUIDADOS PIERCING -->
+    <button class="link-btn" onclick="openModal('cuidados-piercing')">
+      <svg class="btn-icon" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><circle cx="12" cy="12" r="3"/></svg>
+      <span>Cuidados com o piercing</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <!-- LOCALIZAÇÃO -->
+    <a class="link-btn" href="https://maps.app.goo.gl/w8CNaaMYddTKBZqN7" target="_blank" rel="noopener noreferrer">
+      <svg class="btn-icon" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span>Nossa localização</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+
+  </div>
+
+  <!-- MODAIS -->
+  <div class="modal-overlay" id="modal-tattoo" onclick="closeOnOverlay(event,'tattoo')">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('tattoo')">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-body">
+        <div style="display:flex;flex-direction:column;align-items:center;margin-bottom:1.2rem;">
+          <div style="width:82px;height:82px;border-radius:50%;overflow:hidden;border:2px solid rgba(255,255,255,0.15);box-shadow:0 0 0 4px rgba(255,255,255,0.05);flex-shrink:0;">
+            <img src="imagens/van.png" alt="Carlos" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <span style="margin-top:.6rem;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);">Carlos · Tatuador</span>
+          <a href="https://www.instagram.com/loucartetattoo/" target="_blank" rel="noopener noreferrer" style="margin-top:.5rem;display:flex;align-items:center;gap:.35rem;text-decoration:none;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="url(#insta-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+            <span style="font-size:.68rem;letter-spacing:.1em;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">loucartetattoo</span>
+          </a>
+        </div>
+        <p>Blackwork, coberturas e realismo, tatuagens feitas com intenção e significado. Se você quer uma tattoo que realmente diga algo, é aqui!</p>
+        <a class="modal-cta" href="https://wa.me/5548991772318?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20se%C3%A7%C3%A3o%20para%20uma%20tatuagem!" target="_blank" rel="noopener noreferrer">Agendar pelo WhatsApp</a>
+      </div>
     </div>
   </div>
 
-  <div class="footer">© 2025 Loucarte Tattoo &amp; Piercing</div>
+  <div class="modal-overlay" id="modal-piercing" onclick="closeOnOverlay(event,'piercing')">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('piercing')">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-body">
+        <div style="display:flex;flex-direction:column;align-items:center;margin-bottom:1.2rem;">
+          <div style="width:82px;height:82px;border-radius:50%;overflow:hidden;border:2px solid rgba(255,255,255,0.15);box-shadow:0 0 0 4px rgba(255,255,255,0.05);flex-shrink:0;">
+            <img src="imagens/cam.png" alt="Piercer" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <span style="margin-top:.6rem;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);">Camila · Body Piercer</span>
+          <a href="https://www.instagram.com/ca.artpiercing/" target="_blank" rel="noopener noreferrer" style="margin-top:.5rem;display:flex;align-items:center;gap:.35rem;text-decoration:none;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="url(#insta-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+            <span style="font-size:.68rem;letter-spacing:.1em;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">ca.artpiercing</span>
+          </a>
+        </div>
+        <p>Piercing premium com técnica e segurança de verdade. Cada perfuração é feita com protocolo rigoroso, ledterapia para acelerar a cicatrização e joias em titânio, porque detalhe importa do começo ao fim.</p>
+        <a class="modal-cta" href="https://wa.me/554884338688?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20colocar%20um%20piercing!" target="_blank" rel="noopener noreferrer">Agendar pelo WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-cuidados" onclick="closeOnOverlay(event,'cuidados')">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('cuidados')">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-body" style="padding-top:2.2rem;">
+        <p>Os primeiros dias são os mais importantes. Siga essas dicas para garantir que sua arte cure bem.</p>
+        <div class="care-grid">
+          <div class="care-card"><strong>Primeiras horas</strong><p>Mantenha o curativo pelo tempo indicado. Não molhe nem esfregue.</p></div>
+          <div class="care-card"><strong>Limpeza</strong><p>Lave com sabão neutro e água fria. Pat seco com papel toalha.</p></div>
+          <div class="care-card"><strong>Hidratação</strong><p>Pomada cicatrizante de tatuagem 2–3x ao dia em fina camada.</p></div>
+          <div class="care-card"><strong>Evite</strong><p>Sol, piscina, mar e sauna por 30 dias. Não arranque a película.</p></div>
+          <div class="care-card"><strong>Proteção solar</strong><p>FPS 50+ sempre que exposta ao sol após curar.</p></div>
+          <a class="care-card" href="https://wa.me/5548991772318?text=Oi%2C%20tenho%20uma%20d%C3%BAvida%20com%20os%20cuidados%20com%20a%20minha%20tatuagem!" target="_blank" rel="noopener noreferrer" style="text-decoration:none;cursor:pointer;border-color:rgba(74,222,128,.25);background:rgba(74,222,128,.06);"><strong>Dúvidas?</strong><p>Fale com a gente pelo WhatsApp.</p></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-cuidados-piercing" onclick="closeOnOverlay(event,'cuidados-piercing')">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('cuidados-piercing')">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-body" style="padding-top:2.2rem;">
+        <p>Um piercing bem cuidado cura bonito e sem complicações. Siga essas orientações durante o período de cicatrização.</p>
+        <div class="care-grid">
+          <div class="care-card"><strong>Limpeza</strong><p>Lave com soro fisiológico 2x ao dia. Não use álcool nem água oxigenada.</p></div>
+          <div class="care-card"><strong>Não toque</strong><p>Evite mexer ou girar a joia. Só toque com as mãos lavadas.</p></div>
+          <div class="care-card"><strong>Roupas e cabelo</strong><p>Cuidado para não prender na joia. Prenda o cabelo se necessário.</p></div>
+          <div class="care-card"><strong>Evite</strong><p>Piscina, mar, sauna e maquiagem próxima ao piercing até cicatrizar.</p></div>
+          <div class="care-card"><strong>Cicatrização</strong><p>Varia por região: lóbulo ~6 sem, cartilagem 6–12 meses. Tenha paciência.</p></div>
+          <a class="care-card" href="https://wa.me/554884338688?text=Oi%2C%20tenho%20uma%20d%C3%BAvida%20com%20os%20cuidados%20com%20o%20meu%20piercing!" target="_blank" rel="noopener noreferrer" style="text-decoration:none;cursor:pointer;border-color:rgba(74,222,128,.25);background:rgba(74,222,128,.06);"><strong>Dúvidas?</strong><p>Fale com a gente pelo WhatsApp.</p></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAP -->
+  <div class="map-section">
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3514.973114501026!2d-48.668972800000006!3d-28.238495699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x952749c960f56629%3A0x83f309d59801e568!2sLOUCARTE%20Tattoo%20%26%20Piercing!5e0!3m2!1spt-BR!2sbr!4v1781542443426!5m2!1spt-BR!2sbr" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+    </div>
+  </div>
+
+  <div class="footer">© 2026 Loucarte Tattoo & Piercing</div>
+  <div class="credit">Website desenvolvido por <a href="https://amplifyingmkt.com.br/" target="_blank" rel="noopener noreferrer" style="color:#FF6A1A;text-decoration:none;letter-spacing:.12em;">AMPLIFYING</a></div>
 </div>
 
 <script>
-function toggle(id){
-  var panel=document.getElementById('panel-'+id);
-  var btn=panel.previousElementSibling;
-  var open=panel.classList.contains('open');
-  document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('open');});
-  if(!open){panel.classList.add('open');setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},40);}
+var _scrollY=0;
+function openModal(id){
+  var el=document.getElementById('modal-'+id);
+  el.style.display='flex';
+  el.style.opacity='0';
+  el.style.animation='none';
+  requestAnimationFrame(function(){
+    requestAnimationFrame(function(){
+      el.style.animation='';
+      el.classList.add('open');
+      el.style.opacity='';
+    });
+  });
+  _scrollY=window.scrollY;
+  document.body.style.overflow='hidden';
+  document.documentElement.style.overflow='hidden';
+  document.body.style.position='fixed';
+  document.body.style.top='-'+_scrollY+'px';
+  document.body.style.width='100%';
 }
+function closeModal(id){
+  var el=document.getElementById('modal-'+id);
+  el.style.animation='fadeInOverlay .18s ease reverse both';
+  setTimeout(function(){
+    el.classList.remove('open');
+    el.style.animation='';
+    el.style.removeProperty('display');
+    el.style.removeProperty('opacity');
+    document.body.style.overflow='';
+    document.documentElement.style.overflow='';
+    document.body.style.position='';
+    document.body.style.top='';
+    document.body.style.width='';
+    window.scrollTo(0,_scrollY);
+  },170);
+}
+function closeOnOverlay(e,id){
+  if(e.target===e.currentTarget) closeModal(id);
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') document.querySelectorAll('.modal-overlay.open').forEach(function(m){closeModal(m.id.replace('modal-',''));});
+});
+/* Fix #9: removed unused toggle() function (leftover from accordion version) */
 </script>
 </body>
 </html>
